@@ -1,0 +1,13 @@
+Make sure you have your AWS CLI configured (Create a user in IAM and take note of the necessary access keys)
+Make sure to login through your AWS CLI 
+Here are the various DVC commands:
+
+1). aws configure - configure the aws login
+2). dvc init -f  - initializes the doc files
+3). dvc add data -- refers to the folder you want to start saving
+4). git rm -r --cached data   (If there were dvc files saved already, you can clear the cache)
+5). dvc remote add -d s3 s3://mystatebucket99/dvc-data    -- s3://<your-s3-bucket-name>/<the-folder-you-want-to-save-it-to>
+6).git add .dvc .dvcignore  -- add all dvc and dvc ignore files to git
+7).git commit -m "Initialize DVC"  -- initialize dvc
+8).dvc push  -- push to your s3 bucket
+9).dvc pull  -- just like git pull
